@@ -2,7 +2,7 @@
   "name": "video-player",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://jtoloui.github.io/Video-Player/",
+  "homepage": "http://jtoloui.github.io/VideoPlayer",
   "dependencies": {
     "axios": "^0.18.0",
     "eslint-plugin-react": "^7.12.4",
