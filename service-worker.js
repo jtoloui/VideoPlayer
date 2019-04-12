@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/Video-Player/precache-manifest.c1108d2e0bdb6aa049fdead2e2fc34c9.js"
+  "/VideoPlayer/precache-manifest.8b680d0ad2159940d40a9ecb9336c601.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/Video-Player/index.html", {
+workbox.routing.registerNavigationRoute("/VideoPlayer/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
