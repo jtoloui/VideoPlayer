@@ -1,15 +1,22 @@
 import React from 'react';
+import './loader.scss';
 
 const VideoDetail = ({ video }) => {
     if (!video) {
-        return <div>Loading...</div>
+        return (
+            <div className="ui segment">
+                <div className="ui active dimmer">
+                    <div className="ui large text loader">Loading</div>
+                </div>
+            </div>
+        );
     }
 
-    const videoSrc= `https://www.youtube.com/embed/${video.id.videoId}`
+    const videoSrc = `https://www.youtube.com/embed/${video.id.videoId}`
     return (
         <div>
             <div className="ui embed">
-                <iframe src={videoSrc} title={video.snippet.title}/>
+                <iframe src={videoSrc} title={video.snippet.title} />
             </div>
             <div className="ui segment">
                 <h4 className="ui header">
