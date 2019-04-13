@@ -6,20 +6,23 @@ import VideoDetail from "./VideoDetail";
 
 class App extends Component {
   state = { videos: [], selectedVideo: null };
-  
+
+  componentDidMount() {
+    this.onTermSubmit("Google");
+  }
+
   onTermSubmit = async term => {
     const response = await youtube.get("/search", {
       params: {
         q: term
       }
     });
-    this.setState({
-      videos: response.data.items
-    });
-    
-    Object.keys(response.data.items).forEach((index) => {
+    Object.keys(response.data.items).forEach(index => {
       if (response.data.items[index].id.kind === "youtube#video") {
-        this.setState({ selectedVideo: response.data.items[index] });
+        this.setState({
+          videos: response.data.items,
+          selectedVideo: response.data.items[index - index.length]
+        });
       }
     });
   };

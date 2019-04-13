@@ -9,3 +9,7 @@
     max-width: 180px;
     border-radius: 10px; 
 }
+#root > div > div.ui.grid > div > div.five.wide.column{
+    max-height: 75vh;
+    overflow: auto;
+}
