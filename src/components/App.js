@@ -10,22 +10,28 @@ class App extends Component {
   componentDidMount() {
     this.onTermSubmit("Vikkstar");
   }
-
   onTermSubmit = async term => {
     const response = await youtube.get("/search", {
       params: {
         q: term
       }
     });
-    Object.keys(response.data.items).forEach(index => {
-      if (response.data.items[index].id.kind === "youtube#video") {
-        return response.data.items;
+
+    let filteredVideos = [];
+    response.data.items.filter(filterList => {
+      // catch the objects without the key 'id'
+      if (typeof filterList.id === "undefined") {
+        return false;
+      } else if (filterList.id.kind === "youtube#video") { // filtering out the youtube channels
+        filteredVideos.push(filterList);
       }
-      this.setState({
-          videos: response.data.items,
-          selectedVideo: response.data.items[index - index.length]
-        });
+      return filteredVideos;
     });
+
+    this.setState({
+      videos: filteredVideos
+    });
+    this.setState({ selectedVideo: this.state.videos[0] });
   };
   onVideoSelect = video => {
     this.setState({ selectedVideo: video });
