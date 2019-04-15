@@ -19,11 +19,12 @@ class App extends Component {
     });
     Object.keys(response.data.items).forEach(index => {
       if (response.data.items[index].id.kind === "youtube#video") {
-        this.setState({
+        return response.data.items;
+      }
+      this.setState({
           videos: response.data.items,
           selectedVideo: response.data.items[index - index.length]
         });
-      }
     });
   };
   onVideoSelect = video => {
