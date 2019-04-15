@@ -8,7 +8,7 @@ class App extends Component {
   state = { videos: [], selectedVideo: null };
 
   componentDidMount() {
-    this.onTermSubmit("Vikkstar");
+    this.onTermSubmit("Reactjs");
   }
 
   onTermSubmit = async term => {
@@ -17,18 +17,29 @@ class App extends Component {
         q: term
       }
     });
-    Object.keys(response.data.items).forEach(index => {
-      if (response.data.items[index].id.kind === "youtube#video") {
-        this.setState({
-          videos: response.data.items,
-          selectedVideo: response.data.items[index - index.length]
-        });
+
+    let filteredVideos = [];
+    response.data.items.filter(filterList => {
+      // catch the objects without the key 'id'
+      if (typeof filterList.id === "undefined") {
+        return false;
+      } else if (filterList.id.kind === "youtube#video") { // filtering out the youtube channels
+        filteredVideos.push(filterList);
       }
+      return filteredVideos;
     });
+
+    this.setState({
+      videos: filteredVideos
+    });
+    
+    this.setState({ selectedVideo: this.state.videos[0] });
   };
+
   onVideoSelect = video => {
     this.setState({ selectedVideo: video });
   };
+  
   render() {
     return (
       <div className="ui container">
