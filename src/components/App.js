@@ -8,8 +8,9 @@ class App extends Component {
   state = { videos: [], selectedVideo: null };
 
   componentDidMount() {
-    this.onTermSubmit("Vikkstar");
+    this.onTermSubmit("Reactjs");
   }
+
   onTermSubmit = async term => {
     const response = await youtube.get("/search", {
       params: {
@@ -31,11 +32,14 @@ class App extends Component {
     this.setState({
       videos: filteredVideos
     });
+    
     this.setState({ selectedVideo: this.state.videos[0] });
   };
+
   onVideoSelect = video => {
     this.setState({ selectedVideo: video });
   };
+  
   render() {
     return (
       <div className="ui container">
