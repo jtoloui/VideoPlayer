@@ -18,14 +18,22 @@ class App extends Component {
       }
     });
 
-    const filteredVideos = response.data.items.filter(filterList => typeof filterList.id !== "undefined" && filterList.id.kind === "youtube#video");
+    const filteredVideos = response.data.items.filter(
+      filterList =>
+        typeof filterList.id !== "undefined" &&
+        filterList.id.kind === "youtube#video"
+    );
     filteredVideos.sort((a, b) => {
-      let dateA = new Date(a.snippet.publishedAt), dateB = new Date(b.snippet.publishedAt);
+      let dateA = new Date(a.snippet.publishedAt),
+        dateB = new Date(b.snippet.publishedAt);
       return dateB - dateA;
     });
-    
-    filteredVideos.forEach((element) => {      
-      return element.snippet.title = element.snippet.title.replace(/&#39;/g, "'");
+
+    filteredVideos.forEach(element => {
+      return (element.snippet.title = element.snippet.title.replace(
+        /&#39;/g,
+        "'"
+      ));
     });
 
     this.setState({
