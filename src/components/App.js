@@ -18,28 +18,17 @@ class App extends Component {
       }
     });
 
-    let filteredVideos = [];
-    response.data.items.filter(filterList => {
-      // catch the objects without the key 'id'
-      if (typeof filterList.id === "undefined") {
-        return false;
-      } else if (filterList.id.kind === "youtube#video") { // filtering out the youtube channels
-        filteredVideos.push(filterList);
-      }
-      return filteredVideos;
-    });
-
+    const filteredVideos = response.data.items.filter(filterList => filterList.id.kind !== "youtube#channel" && typeof filterList.id !== "undefined");
     this.setState({
-      videos: filteredVideos
+      videos: filteredVideos,
+      selectedVideo: filteredVideos[0]
     });
-    
-    this.setState({ selectedVideo: this.state.videos[0] });
   };
 
   onVideoSelect = video => {
     this.setState({ selectedVideo: video });
   };
-  
+
   render() {
     return (
       <div className="ui container">
