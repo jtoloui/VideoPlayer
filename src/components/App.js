@@ -19,7 +19,6 @@ class App extends Component {
     });
 
     const filteredVideos = response.data.items.filter(filterList => typeof filterList.id !== "undefined" && filterList.id.kind === "youtube#video");
-    console.log(filteredVideos);
     
     this.setState({
       videos: filteredVideos,
