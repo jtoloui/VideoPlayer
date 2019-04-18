@@ -1,5 +1,7 @@
 import React from 'react';
 import './loader.scss';
+import ReactPlayer from 'react-player'
+
 
 const VideoDetail = ({ video }) => {
     if (!video) {
@@ -16,7 +18,14 @@ const VideoDetail = ({ video }) => {
     return (
         <div>
             <div className="ui embed">
-                <iframe src={videoSrc} title={video.snippet.title} />
+                <ReactPlayer
+                    className='react-player'
+                    url={videoSrc}
+                    width='100%'
+                    height='100%'
+                    controls={true}
+                    pip={true}
+                />
             </div>
             <div className="ui segment">
                 <h4 className="ui header">
