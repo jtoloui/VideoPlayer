@@ -5,67 +5,65 @@ import VideoList from "./VideoList";
 import VideoDetail from "./VideoDetail";
 
 class App extends Component {
-  state = { videos: [], selectedVideo: null };
+	state = { videos: [], selectedVideo: null };
 
-  componentDidMount() {
-    this.onTermSubmit("ReactJS");
-  }
+	componentDidMount() {
+		this.onTermSubmit("ReactJS");
+	}
 
-  onTermSubmit = async term => {
-    const response = await youtube.get("/search", {
-      params: {
-        q: term
-      }
-    });
+	onTermSubmit = async term => {
+		const response = await youtube.get("/search", {
+			params: {
+				q: term
+			}
+		});
 
-    const filteredVideos = response.data.items.filter(
-      filterList =>
-        typeof filterList.id !== "undefined" &&
-        filterList.id.kind === "youtube#video"
-    );
-    filteredVideos.sort((a, b) => {
-      let dateA = new Date(a.snippet.publishedAt),
-        dateB = new Date(b.snippet.publishedAt);
-      return dateB - dateA;
-    });
+		const filteredVideos = response.data.items.filter(
+			filterList =>
+				typeof filterList.id !== "undefined" &&
+				filterList.id.kind === "youtube#video"
+		);
 
-    filteredVideos.forEach(element => {
-      return (element.snippet.title = element.snippet.title.replace(
-        /&#39;/g,
-        "'"
-      ));
-    });
+		filteredVideos.sort((a, b) => {
+			let dateA = new Date(a.snippet.publishedAt),
+				dateB = new Date(b.snippet.publishedAt);
+			return dateB - dateA;
+		});
 
-    this.setState({
-      videos: filteredVideos,
-      selectedVideo: filteredVideos[0]
-    });
-  };
+		filteredVideos.forEach(element => {
+			element.snippet.title = element.snippet.title.replace(/&#39;/g, "'").replace(/&amp;/g, "&");
+		});
 
-  onVideoSelect = video => {
-    this.setState({ selectedVideo: video });
-  };
+		this.setState({
+			videos: filteredVideos,
+			selectedVideo: filteredVideos[0]
+		});
+	};
 
-  render() {
-    return (
-      <div className="ui container">
-        <SearchBar onFormSubmit={this.onTermSubmit} />
-        <div className="ui grid">
-          <div className="ui row">
-            <div className=" eleven wide column">
-              <VideoDetail video={this.state.selectedVideo} />
-            </div>
-            <div className=" five wide column">
-              <VideoList
-                onVideoSelect={this.onVideoSelect}
-                videos={this.state.videos}
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
+	onVideoSelect = video => {
+		this.setState({ selectedVideo: video });
+	};
+
+	render() {
+		return (
+			<div className="ui container">
+				<SearchBar onFormSubmit={this.onTermSubmit} />
+				<div className="ui grid">
+					<div className="ui row">
+						<div className=" eleven wide column">
+							<VideoDetail video={this.state.selectedVideo} />
+						</div>
+						<div className=" five wide column">
+							<VideoList
+								onVideoSelect={this.onVideoSelect}
+								videos={this.state.videos}
+							/>
+						</div>
+					</div>
+				</div>
+			</div>
+		);
+	}
 }
 
 export default App;
