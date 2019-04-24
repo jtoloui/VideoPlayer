@@ -3,6 +3,7 @@ import SearchBar from "./SearchBar";
 import youtube from "../APIs/youtube";
 import VideoList from "./VideoList";
 import VideoDetail from "./VideoDetail";
+import he from 'he';
 
 class App extends Component {
 	state = { videos: [], selectedVideo: null };
@@ -31,7 +32,7 @@ class App extends Component {
 		});
 
 		filteredVideos.forEach(element => {
-			element.snippet.title = element.snippet.title.replace(/&#39;/g, "'").replace(/&amp;/g, "&");
+			element.snippet.title = he.decode(element.snippet.title);
 		});
 
 		this.setState({
