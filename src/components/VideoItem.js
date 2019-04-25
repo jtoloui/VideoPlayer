@@ -3,7 +3,10 @@ import React from "react";
 
 const VideoItem = ({ video, onVideoSelect }) => {
 	return (
-		<div onClick={() => onVideoSelect(video)} className="video-item item">
+		<div
+			onClick={() => onVideoSelect(video)}
+			className="video-item item"
+		>
 			<img
 				className="ui image"
 				alt={video.snippet.description}
@@ -13,7 +16,7 @@ const VideoItem = ({ video, onVideoSelect }) => {
 				<div>
 					<div className="header">{video.snippet.title}</div>
 				</div>
-		</div>
+			</div>
 		</div>
 	);
 };
