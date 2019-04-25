@@ -20,7 +20,7 @@ const VideoDetail = ({ video }) => {
 				<YouTubePlayer
 					className="react-player"
 					url={videoSrc}
-					controls
+				  	controls
 					pip={true}
 					// Other ReactPlayer props will work here
 				/>

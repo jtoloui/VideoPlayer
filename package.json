@@ -20,7 +20,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prettier": "prettier -c src/**/*.{js,css,scss,json}"
+    "prettier": "prettier -c src/**/*.{js,css,scss,json}",
+    "lint": "./node_modules/.bin/eslint src/**/**.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -33,7 +34,10 @@
   ],
   "lint-staged": {
     "linters": {
-      "src/**/*.{js,css,scss,json}": ["prettier -c", "git add"]
+      "src/**/*.{js,css,scss,json}": [
+        "lint",
+        "git add"
+      ]
     }
   },
   "husky": {
