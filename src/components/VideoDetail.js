@@ -22,7 +22,6 @@ const VideoDetail = ({ video }) => {
 					url={videoSrc}
 					controls
 					pip={true}
-					// Other ReactPlayer props will work here
 				/>
 			</div>
 			<div className="ui segment">
