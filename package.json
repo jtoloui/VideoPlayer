@@ -34,7 +34,7 @@
   ],
   "lint-staged": {
     "linters": {
-      "src/**/*.{js,css,scss,json}": [
+      "src/**/*.{js}": [
         "lint",
         "git add"
       ]
