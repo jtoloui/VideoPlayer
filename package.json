@@ -33,7 +33,7 @@
   ],
   "lint-staged": {
     "linters": {
-      "src/**/*.{js,css, json}": ["prettier -c", "git add"],
+      "src/**/*.{js,css, json}": ["prettier -c", "git add"]
     }
   },
   "husky": {
