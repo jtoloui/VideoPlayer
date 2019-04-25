@@ -1,7 +1,6 @@
-import React from 'react';
-import './loader.scss';
-import YouTubePlayer from 'react-player/lib/players/YouTube'
-
+import React from "react";
+import "./loader.scss";
+import YouTubePlayer from "react-player/lib/players/YouTube";
 
 const VideoDetail = ({ video }) => {
 	if (!video) {
@@ -14,27 +13,22 @@ const VideoDetail = ({ video }) => {
 		);
 	}
 
-	const videoSrc = `https://www.youtube.com/embed/${video.id.videoId}`
+	const videoSrc = `https://www.youtube.com/embed/${video.id.videoId}`;
 	return (
 		<div>
 			<div className="ui embed">
 				<YouTubePlayer
-					className='react-player'
+					className="react-player"
 					url={videoSrc}
 					controls
 					pip={true}
-				// Other ReactPlayer props will work here
+					// Other ReactPlayer props will work here
 				/>
 			</div>
 			<div className="ui segment">
-				<h4 className="ui header">
-					{video.snippet.title}
-				</h4>
-				<p>
-					{video.snippet.description}
-				</p>
+				<h4 className="ui header">{video.snippet.title}</h4>
+				<p>{video.snippet.description}</p>
 			</div>
-
 		</div>
 	);
 };

@@ -3,24 +3,27 @@ import SearchBar from "./SearchBar";
 import youtube from "../APIs/youtube";
 import VideoList from "./VideoList";
 import VideoDetail from "./VideoDetail";
-import he from 'he';
+import he from "he";
 
 class App extends Component {
-	state = { videos: [], selectedVideo: null };
+	state = {
+		videos: [],
+		selectedVideo: null,
+	};
 
 	componentDidMount() {
 		this.onTermSubmit("ReactJS");
 	}
 
-	onTermSubmit = async term => {
+	onTermSubmit = async (term) => {
 		const response = await youtube.get("/search", {
 			params: {
-				q: term
-			}
+				q: term,
+			},
 		});
 
 		const filteredVideos = response.data.items.filter(
-			filterList =>
+			(filterList) =>
 				typeof filterList.id !== "undefined" &&
 				filterList.id.kind === "youtube#video"
 		);
@@ -31,18 +34,20 @@ class App extends Component {
 			return dateB - dateA;
 		});
 
-		filteredVideos.forEach(element => {
+		filteredVideos.forEach((element) => {
 			element.snippet.title = he.decode(element.snippet.title);
 		});
 
 		this.setState({
 			videos: filteredVideos,
-			selectedVideo: filteredVideos[0]
+			selectedVideo: filteredVideos[0],
 		});
 	};
 
-	onVideoSelect = video => {
-		this.setState({ selectedVideo: video });
+	onVideoSelect = (video) => {
+		this.setState({
+			selectedVideo: video,
+		});
 	};
 
 	render() {
