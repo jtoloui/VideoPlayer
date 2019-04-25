@@ -35,6 +35,7 @@
   "lint-staged": {
     "linters": {
       "src/**/*.{js,css,scss,json}": [
+        "./node_modules/.bin/prettier  -c",
         "./node_modules/.bin/eslint",
         "git add"
       ]
