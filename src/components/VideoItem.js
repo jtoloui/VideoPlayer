@@ -1,13 +1,13 @@
 import "./VideoItem.css";
 import React from "react";
+import { Image } from "semantic-ui-react";
 
 const VideoItem = ({ video, onVideoSelect }) => {
 	return (
 		<div onClick={() => onVideoSelect(video)} className="video-item item">
-			<img
-				className="ui image"
+			<Image
+				src={video.snippet.thumbnails.high.url}
 				alt={video.snippet.description}
-				src={video.snippet.thumbnails.medium.url}
 			/>
 			<div className="content">
 				<div>
