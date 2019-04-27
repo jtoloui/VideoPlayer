@@ -4,7 +4,7 @@ import youtube from "../APIs/youtube";
 import VideoList from "./VideoList";
 import VideoDetail from "./VideoDetail";
 import he from "he";
-import { Button, Grid, Label } from "semantic-ui-react";
+import { Button, Grid } from "semantic-ui-react";
 
 class App extends Component {
 	state = {

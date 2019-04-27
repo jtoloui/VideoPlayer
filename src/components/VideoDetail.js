@@ -1,6 +1,5 @@
 import React from "react";
 import "./loader.scss";
-import YouTubePlayer from "react-player/lib/players/YouTube";
 import { Embed, Segment, Header } from "semantic-ui-react";
 
 const VideoDetail = ({ video }) => {
@@ -13,8 +12,6 @@ const VideoDetail = ({ video }) => {
 			</div>
 		);
 	}
-
-	const videoSrc = `https://www.youtube.com/embed/${video.id.videoId}`;
 	return (
 		<div>
 			<Embed
