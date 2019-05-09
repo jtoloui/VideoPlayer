@@ -16,11 +16,12 @@ const VideoDetail = ({ video }) => {
 		<div>
 			<Embed
 				hd={true}
-				autoplay={true}
+				autoplay={false}
 				aspectRatio="16:9"
 				id={video.id.videoId}
 				placeholder={video.snippet.thumbnails.high.url}
 				source="youtube"
+				active={true}
 			/>
 			<Segment>
 				<Header as="h4">{video.snippet.title}</Header>
