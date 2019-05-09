@@ -1,9 +1,9 @@
 {
   "main.css": "/VideoPlayer/static/css/main.b8d1ad03.chunk.css",
-  "main.js": "/VideoPlayer/static/js/main.a2119b21.chunk.js",
+  "main.js": "/VideoPlayer/static/js/main.183d7990.chunk.js",
   "runtime~main.js": "/VideoPlayer/static/js/runtime~main.168de462.js",
   "static/js/2.456e39e9.chunk.js": "/VideoPlayer/static/js/2.456e39e9.chunk.js",
   "index.html": "/VideoPlayer/index.html",
-  "precache-manifest.ea28b5bf7f5cbe8905a1c89483e0d583.js": "/VideoPlayer/precache-manifest.ea28b5bf7f5cbe8905a1c89483e0d583.js",
+  "precache-manifest.0a9a49b3470d7f18f30ec0420acff25f.js": "/VideoPlayer/precache-manifest.0a9a49b3470d7f18f30ec0420acff25f.js",
   "service-worker.js": "/VideoPlayer/service-worker.js"
 }
