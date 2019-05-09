@@ -1,15 +1,9 @@
 {
-  "files": {
-    "main.css": "/VideoPlayer/static/css/main.5cd10557.chunk.css",
-    "main.js": "/VideoPlayer/static/js/main.de11c532.chunk.js",
-    "main.js.map": "/VideoPlayer/static/js/main.de11c532.chunk.js.map",
-    "runtime~main.js": "/VideoPlayer/static/js/runtime~main.168de462.js",
-    "runtime~main.js.map": "/VideoPlayer/static/js/runtime~main.168de462.js.map",
-    "static/js/2.3c1337a1.chunk.js": "/VideoPlayer/static/js/2.3c1337a1.chunk.js",
-    "static/js/2.3c1337a1.chunk.js.map": "/VideoPlayer/static/js/2.3c1337a1.chunk.js.map",
-    "index.html": "/VideoPlayer/index.html",
-    "precache-manifest.24319555cf0850e385f1f4553bc1d45c.js": "/VideoPlayer/precache-manifest.24319555cf0850e385f1f4553bc1d45c.js",
-    "service-worker.js": "/VideoPlayer/service-worker.js",
-    "static/css/main.5cd10557.chunk.css.map": "/VideoPlayer/static/css/main.5cd10557.chunk.css.map"
-  }
+  "main.css": "/VideoPlayer/static/css/main.b8d1ad03.chunk.css",
+  "main.js": "/VideoPlayer/static/js/main.92829b57.chunk.js",
+  "runtime~main.js": "/VideoPlayer/static/js/runtime~main.168de462.js",
+  "static/js/2.456e39e9.chunk.js": "/VideoPlayer/static/js/2.456e39e9.chunk.js",
+  "index.html": "/VideoPlayer/index.html",
+  "precache-manifest.fdda2fa031c402b06ccca771a6fcd797.js": "/VideoPlayer/precache-manifest.fdda2fa031c402b06ccca771a6fcd797.js",
+  "service-worker.js": "/VideoPlayer/service-worker.js"
 }
