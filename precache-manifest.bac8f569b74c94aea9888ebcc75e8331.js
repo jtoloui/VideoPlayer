@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/VideoPlayer/static/js/runtime~main.168de462.js"
   },
   {
-    "revision": "8b5f0cdafbff70be62b7",
+    "revision": "2e7922634c0639ca6a33",
     "url": "/VideoPlayer/static/js/main.92829b57.chunk.js"
   },
   {
@@ -12,11 +12,11 @@ self.__precacheManifest = [
     "url": "/VideoPlayer/static/js/2.456e39e9.chunk.js"
   },
   {
-    "revision": "8b5f0cdafbff70be62b7",
-    "url": "/VideoPlayer/static/css/main.b8d1ad03.chunk.css"
+    "revision": "2e7922634c0639ca6a33",
+    "url": "/VideoPlayer/static/css/main.bda6bf56.chunk.css"
   },
   {
-    "revision": "ecfdacc5671a707e4c70ba717ce941f4",
+    "revision": "a9a6890253cf7bf3dfb1cf01a66591b6",
     "url": "/VideoPlayer/index.html"
   }
 ];
