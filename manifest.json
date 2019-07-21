@@ -1,7 +1,7 @@
 {
   "short_name": "JToloui Video player",
   "name": "Simple video player",
-  "Version": "2.0",
+  "Version": "1.2",
   "icons": [
     {
       "src": "favicon.ico",
