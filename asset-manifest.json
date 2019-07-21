@@ -1,11 +1,11 @@
 {
   "files": {
     "main.css": "/VideoPlayer/static/css/main.b8d1ad03.chunk.css",
-    "main.js": "/VideoPlayer/static/js/main.86774f2c.chunk.js",
+    "main.js": "/VideoPlayer/static/js/main.aa53a49b.chunk.js",
     "runtime~main.js": "/VideoPlayer/static/js/runtime~main.168de462.js",
     "static/js/2.88987140.chunk.js": "/VideoPlayer/static/js/2.88987140.chunk.js",
     "index.html": "/VideoPlayer/index.html",
-    "precache-manifest.ca7a7be8d5391716b70b3c8ce988cf67.js": "/VideoPlayer/precache-manifest.ca7a7be8d5391716b70b3c8ce988cf67.js",
+    "precache-manifest.268b19e78c2373f8a1011c14326b9cd3.js": "/VideoPlayer/precache-manifest.268b19e78c2373f8a1011c14326b9cd3.js",
     "service-worker.js": "/VideoPlayer/service-worker.js"
   }
 }
